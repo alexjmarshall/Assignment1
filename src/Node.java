@@ -1,0 +1,17 @@
+public class Node<T> {
+  Node<T> next;
+  T value;
+
+  public Node(T value) {
+    this.value = value;
+  }
+
+  public void setNext(Node<T> node) {
+    next = node;
+  }
+
+  public T getValue() {
+    return value;
+  }
+  
+}

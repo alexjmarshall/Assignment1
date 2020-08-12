@@ -18,7 +18,7 @@ public class SLList<E> implements Queue<E> {
   }
 
   @Override
-  public E removeFront() {
+  public E removeFront() { //TODO check if n is 0
     E firstVal = first.value;
     first = first.next;
     n--;
@@ -39,21 +39,4 @@ public class SLList<E> implements Queue<E> {
     return values;
   }
 
-  class Node<T> {
-    Node<T> next;
-    T value;
-
-    public Node(T value) {
-      this.value = value;
-    }
-
-    public void setNext(Node<T> node) {
-      next = node;
-    }
-
-    public T getValue() {
-      return value;
-    }
-  }
-  
 }
