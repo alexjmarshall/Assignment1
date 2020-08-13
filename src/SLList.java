@@ -1,7 +1,7 @@
 public class SLList<E> implements Queue<E> {
-  private Node<E> first;
-  private Node<E> last;
-  private int n;
+  protected Node<E> first;
+  protected Node<E> last;
+  protected int n;
 
   @Override
   public boolean addBack(E e) {
@@ -23,6 +23,34 @@ public class SLList<E> implements Queue<E> {
     first = first.next;
     n--;
     return firstVal;
+  }
+
+  public boolean swapWithNext(int index) {
+    if(index + 1 >= size()) {
+      return false;
+    } else {
+      Node<E> curr = first;
+      Node<E> prev = null;
+      Node<E> next = first.next;
+
+      while(index > 0) {
+        prev = curr;
+        curr = curr.next;
+        next = curr.next;
+        index--;
+      }
+
+      if(curr.equals(first)) {
+        first = curr.next;
+      } else if (curr.next.equals(last)) {
+        last = curr;
+      }
+
+      if(prev != null) prev.next = curr.next;
+      curr.next = next.next;
+      next.next = curr;
+    }
+    return true;
   }
 
   public int size() {
