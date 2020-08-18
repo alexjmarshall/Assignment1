@@ -30,18 +30,27 @@ public class App {
         // vals = q.printValues();
         // System.out.println(vals);
 
-        DLList<Integer> list = new DLList<Integer>();
-        list.addFront(5);
-        list.addFront(4);
-        list.addFront(3);
-        list.addFront(2);
-        list.addFront(1);
+        // DLList<Integer> list = new DLList<Integer>();
+        // list.addFront(5);
+        // list.addFront(4);
+        // list.addFront(3);
+        // list.addFront(2);
+        // list.addFront(1);
+        // String vals = list.printValues();
+        // System.out.println(vals);
+
+        // list.swapWithNext(4);
+
+        // vals = list.printValues();
+        // System.out.println(vals);
+
+        MinStack<Integer> list = new MinStack<Integer>();
+        list.push(5);
+        list.push(4);
+        list.push(3);
+        list.addBack(2);
+        list.addBack(1);
         String vals = list.printValues();
-        System.out.println(vals);
-
-        list.swapWithNext(4);
-
-        vals = list.printValues();
         System.out.println(vals);
     }
 }
