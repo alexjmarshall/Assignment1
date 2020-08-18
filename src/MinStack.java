@@ -1,22 +1,31 @@
-public class MinStack<E> extends SLList<E> implements Stack<E> {
+import java.lang.reflect.Array;
+
+public class MinStack<E> implements Stack<E> {
+  private E[] arr;
+  private E[] arr2;
+  private int n;
+
+  public MinStack(Class<E[]> clazz, int length) {
+    arr = clazz.cast(Array.newInstance(clazz.getComponentType(), length));
+    arr2 = clazz.cast(Array.newInstance(clazz.getComponentType(), length));  
+  }
 
   @Override
   public boolean push(E e) {
-    Node<E> node = new Node<E>(e);
-    if(n == 0) {
-      first = node;
-      last = node;
-    } else {
-      node.next = first;
-      first= node;
-    }
-    n++;
-    return true;
+    
+    return false;
   }
 
   @Override
   public E pop() {
-    return super.removeFront();
+    // TODO Auto-generated method stub
+    return null;
   }
+
+  @Override
+  public int size() {
+    return n;
+  }
+  
   
 }
