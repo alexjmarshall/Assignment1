@@ -44,13 +44,23 @@ public class App {
         // vals = list.printValues();
         // System.out.println(vals);
 
-        MinStack<Integer> list = new MinStack<Integer>();
+        MinStack list = new MinStack(20);
         list.push(5);
-        list.push(4);
+        System.out.println(list.getMin());
         list.push(3);
-        list.addBack(2);
-        list.addBack(1);
-        String vals = list.printValues();
-        System.out.println(vals);
+        System.out.println(list.getMin());
+        list.push(4);
+        System.out.println(list.getMin());
+        list.push(2);
+        System.out.println(list.getMin());
+        list.push(2);
+        System.out.println(list.getMin());
+        list.push(3);
+        list.push(3);
+        list.pop();
+        list.pop();
+        list.pop();
+        list.pop();
+        System.out.println(list.getMin());
     }
 }

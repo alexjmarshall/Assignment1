@@ -22,4 +22,10 @@ public class TwoQueueStack<E> implements Stack<E> {
     return value;
   }
 
+  @Override
+  public int size() {
+    // TODO Auto-generated method stub
+    return 0;
+  }
+
 }

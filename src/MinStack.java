@@ -1,31 +1,41 @@
-import java.lang.reflect.Array;
-
-public class MinStack<E> implements Stack<E> {
-  private E[] arr;
-  private E[] arr2;
+public class MinStack implements Stack<Integer> {
+  private Integer[] arr;
+  private Integer[] arr2;
   private int n;
 
-  public MinStack(Class<E[]> clazz, int length) {
-    arr = clazz.cast(Array.newInstance(clazz.getComponentType(), length));
-    arr2 = clazz.cast(Array.newInstance(clazz.getComponentType(), length));  
+  MinStack(int length) {
+    arr = new Integer[length];
+    arr2 = new Integer[length];
   }
 
   @Override
-  public boolean push(E e) {
-    
-    return false;
+  public boolean push(Integer e) {
+    arr[n] = e;
+    if(n == 0 || e < arr2[n-1] ) {
+      arr2[n] = e;
+    } else {
+      arr2[n] = arr2[n-1];
+    }
+    n++;
+    return true;
   }
 
   @Override
-  public E pop() {
-    // TODO Auto-generated method stub
-    return null;
+  public Integer pop() {
+    Integer val = arr[n];
+    arr[n] = null;
+    arr2[n] = null;
+    n--;
+    return val;
+  }
+
+  public Integer getMin() {
+    return arr2[n-1];
   }
 
   @Override
   public int size() {
     return n;
   }
-  
   
 }
