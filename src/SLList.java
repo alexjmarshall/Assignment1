@@ -18,11 +18,15 @@ public class SLList<E> implements Queue<E> {
   }
 
   @Override
-  public E removeFront() { //TODO check if n is 0
-    E firstVal = first.value;
+  public E removeFront() {
+    if(n < 1) {
+      return null;
+    } else {
+      E firstVal = first.value;
     first = first.next;
     n--;
     return firstVal;
+    }
   }
 
   public boolean swapWithNext(int index) {

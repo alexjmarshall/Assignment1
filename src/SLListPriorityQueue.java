@@ -24,7 +24,6 @@ public class SLListPriorityQueue extends SLList<Integer> implements PriorityQueu
     } else {
       minPrev.next = min.next;
     }
-    
     n--;
 
     return min.value;

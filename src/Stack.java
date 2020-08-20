@@ -1,5 +1,5 @@
 public interface Stack<E> {
-  public boolean push(E e);
+  public void push(E e);
 
   public E pop();
 

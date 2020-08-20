@@ -30,37 +30,42 @@ public class App {
         // vals = q.printValues();
         // System.out.println(vals);
 
-        // DLList<Integer> list = new DLList<Integer>();
-        // list.addFront(5);
-        // list.addFront(4);
-        // list.addFront(3);
-        // list.addFront(2);
-        // list.addFront(1);
-        // String vals = list.printValues();
-        // System.out.println(vals);
+        DLList<Integer> dllist = new DLList<Integer>();
+        dllist.addFront(5);
+        dllist.addFront(4);
+        dllist.addFront(3);
+        dllist.addFront(2);
+        dllist.addFront(1);
+        String vals = dllist.printValues();
+        System.out.println(vals);
+
+        dllist.reverseValues();
+        vals = dllist.printValues();
+        System.out.println(vals);
+
 
         // list.swapWithNext(4);
 
         // vals = list.printValues();
         // System.out.println(vals);
 
-        MinStack list = new MinStack(20);
-        list.push(5);
-        System.out.println(list.getMin());
-        list.push(3);
-        System.out.println(list.getMin());
-        list.push(4);
-        System.out.println(list.getMin());
-        list.push(2);
-        System.out.println(list.getMin());
-        list.push(2);
-        System.out.println(list.getMin());
-        list.push(3);
-        list.push(3);
-        list.pop();
-        list.pop();
-        list.pop();
-        list.pop();
-        System.out.println(list.getMin());
+        // MinStack minstack = new MinStack(20);
+        // minstack.push(5);
+        // System.out.println(minstack.getMin());
+        // minstack.push(3);
+        // System.out.println(minstack.getMin());
+        // minstack.push(4);
+        // System.out.println(minstack.getMin());
+        // minstack.push(2);
+        // System.out.println(minstack.getMin());
+        // minstack.push(2);
+        // System.out.println(minstack.getMin());
+        // minstack.push(3);
+        // minstack.push(3);
+        // minstack.pop();
+        // minstack.pop();
+        // minstack.pop();
+        // minstack.pop();
+        // System.out.println(minstack.getMin());
     }
 }

@@ -9,7 +9,7 @@ public class MinStack implements Stack<Integer> {
   }
 
   @Override
-  public boolean push(Integer e) {
+  public void push(Integer e) {
     arr[n] = e;
     if(n == 0 || e < arr2[n-1] ) {
       arr2[n] = e;
@@ -17,16 +17,19 @@ public class MinStack implements Stack<Integer> {
       arr2[n] = arr2[n-1];
     }
     n++;
-    return true;
   }
 
   @Override
   public Integer pop() {
-    Integer val = arr[n];
-    arr[n] = null;
-    arr2[n] = null;
-    n--;
-    return val;
+    if(n < 1) {
+      return null;
+    } else {
+      Integer val = arr[n];
+      arr[n] = null;
+      arr2[n] = null;
+      n--;
+      return val;
+    }
   }
 
   public Integer getMin() {

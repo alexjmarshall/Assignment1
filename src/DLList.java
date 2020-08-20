@@ -81,4 +81,19 @@ public class DLList<E> {
     }
     return true;
   }
+
+  public void reverseValues() {
+    Node<E> curr = dummy;
+    Node<E> prev = dummy.prev;
+    Node<E> next = dummy.next;
+    
+    do {
+      next = curr.next;
+      curr.next = prev;
+      curr.prev = next;
+      prev = curr;
+      curr = next;
+    } while(curr.value != null);
+
+  }
 }
