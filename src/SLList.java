@@ -4,7 +4,7 @@ public class SLList<E> implements Queue<E> {
   protected int n;
 
   @Override
-  public boolean addBack(E e) {
+  public boolean add(E e) {
     Node<E> node = new Node<E>(e);
 
     if (n == 0) { // 1
@@ -20,10 +20,10 @@ public class SLList<E> implements Queue<E> {
     return true;
   }
   // Total: 6
-  // = O(1)/constant time.
+  // Therefore, O(1)/constant time.
 
   @Override
-  public E removeFront() {
+  public E remove() {
     if(n < 1) {
       return null;
     } else {

@@ -30,5 +30,5 @@ public class SLListPriorityQueue extends SLList<Integer> implements PriorityQueu
   }
   // Total: 4 + n + 1 + 5n + 3 + 1
   // = 9 + 6n
-  // = O(n)/linear time
+  // Therefore, O(n)/linear time
 }

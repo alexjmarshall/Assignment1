@@ -13,35 +13,38 @@ public class App {
 
         // TwoQueueStack<Integer> stack = new TwoQueueStack<Integer>();
 
+        // System.out.println("Push order: 1 2 3");
         // stack.push(1);
         // stack.push(2);
         // stack.push(3);
-        // System.out.println(stack.pop() + " " + stack.pop() + " " + stack.pop());
+        // System.out.println("Pop order: " + stack.pop() + " " + stack.pop() + " " + stack.pop());
 
-        // SLListPriorityQueue q = new SLListPriorityQueue();
-        // q.addBack(2);
-        // q.addBack(3);
-        // q.addBack(1);
+        SLListPriorityQueue q = new SLListPriorityQueue();
+        q.add(2);
+        q.add(3);
+        q.add(1);
         
-        // String vals = q.printValues();
-        // System.out.println(vals);
-        // Integer min = q.deleteMin();
-        // System.out.println(min);
-        // vals = q.printValues();
+        String vals = q.printValues();
+        System.out.println("Initial values: " + vals);
+        System.out.println("Size: " + q.size());
+        Integer min = q.deleteMin();
+        System.out.println("Minimum value: " + min);
+        vals = q.printValues();
+        System.out.println("Remaining values after deleteMin(): " + vals);
+        System.out.println("Size: " + q.size());
+
+        // DLList<Integer> dllist = new DLList<Integer>();
+        // dllist.addFront(5);
+        // dllist.addFront(4);
+        // dllist.addFront(3);
+        // dllist.addFront(2);
+        // dllist.addFront(1);
+        // String vals = dllist.printValues();
         // System.out.println(vals);
 
-        DLList<Integer> dllist = new DLList<Integer>();
-        dllist.addFront(5);
-        dllist.addFront(4);
-        dllist.addFront(3);
-        dllist.addFront(2);
-        dllist.addFront(1);
-        String vals = dllist.printValues();
-        System.out.println(vals);
-
-        dllist.reverseValues();
-        vals = dllist.printValues();
-        System.out.println(vals);
+        // dllist.reverseValues();
+        // vals = dllist.printValues();
+        // System.out.println(vals);
 
 
         // list.swapWithNext(4);

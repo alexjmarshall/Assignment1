@@ -1,5 +1,5 @@
 public interface Queue<E> {
-  public boolean addBack(E e);
+  public boolean add(E e);
 
-  public E removeFront();
+  public E remove();
 }
