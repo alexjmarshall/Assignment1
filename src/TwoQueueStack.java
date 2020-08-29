@@ -5,28 +5,30 @@ public class TwoQueueStack<E> implements Stack<E> {
 
   @Override
   public void push(E e) {
-    qB.add(e);// 1
-    while(qA.size() > 0) {// n + 1
-      E value = qA.remove();// n
-      qB.add(value);// n
+    //store new value in qB, then add all values from qA to qB
+    qB.add(e);
+
+    while(qA.size() > 0) {
+      E value = qA.remove();
+      qB.add(value);
     }
-    SLList<E> temp = qA;// 1
-    qA = qB;// 1
-    qB = temp;// 1
-    n++;// 1
+
+    //swap names of qA and qB
+    SLList<E> temp = qA;
+    qA = qB;
+    qB = temp;
+
+    n++;
   }
-  // Total: 1 + n + 1 + 2n + 4
-  // = 6 + 3n
-  // Therefore, O(n)/linear time
 
   @Override
   public E pop() {
-    E value = qA.remove();// 1
-    n--;// 1
+    E value = qA.remove();
+
+    n--;
+
     return value;
   }
-  // Total: 2
-  // Therefore, O(1)/constant time
 
   @Override
   public int size() {

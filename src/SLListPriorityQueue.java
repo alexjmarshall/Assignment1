@@ -2,33 +2,34 @@ public class SLListPriorityQueue extends SLList<Integer> implements PriorityQueu
 
   @Override
   public Integer deleteMin() {
-    Node<Integer> min = first;// 1
-    Node<Integer> minPrev = null;// 1
-    Node<Integer> curr = first.next;// 1
-    Node<Integer> prev = first;// 1
+    Node<Integer> min = first;
+    Node<Integer> minPrev = null;
+    Node<Integer> curr = first.next;
+    Node<Integer> prev = first;
 
-    while(curr != null) {// n + 1
-      if(min.value > curr.value) {// n
-        min = curr;// n
-        minPrev = prev;// n
+    //iterate through list, updating min if value is less than min
+    while(curr != null) {
+      if(min.value > curr.value) {
+        min = curr;
+        minPrev = prev;
       }
-      prev = curr;// n
-      curr = curr.next;// n
+      prev = curr;
+      curr = curr.next;
     }
 
-    if(min.equals(first)) {// 1
-      first = first.next;// 1
-    } else if(min.equals(last)) {// 1
-      minPrev.next = null;// 1
-      last = minPrev;// 1
-    } else {// 1
-      minPrev.next = min.next;// 1
+    //remove min from list
+    if(min.equals(first)) {
+      first = first.next;
+    } else if(min.equals(last)) {
+      minPrev.next = null;
+      last = minPrev;
+    } else {
+      minPrev.next = min.next;
     }
-    n--;// 1
+    
+    n--;
 
     return min.value;
   }
-  // Total: 4 + n + 1 + 5n + 3 + 1
-  // = 9 + 6n
-  // Therefore, O(n)/linear time
+
 }

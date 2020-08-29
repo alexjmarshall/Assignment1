@@ -7,20 +7,19 @@ public class SLList<E> implements Queue<E> {
   public boolean add(E e) {
     Node<E> node = new Node<E>(e);
 
-    if (n == 0) { // 1
-      first = node; // 1
-      last = node;  // 1
+    //if list is empty, new node is both first and last in list
+    if (n == 0) {
+      first = node;
+      last = node;
     } else {
-      last.next = node; // 1
-      last = node;  // 1
+      last.next = node;
+      last = node;
     }
 
-    n++;  // 1
+    n++;
 
     return true;
   }
-  // Total: 6
-  // Therefore, O(1)/constant time.
 
   @Override
   public E remove() {
@@ -28,9 +27,11 @@ public class SLList<E> implements Queue<E> {
       return null;
     } else {
       E firstVal = first.value;
-    first = first.next;
-    n--;
-    return firstVal;
+      first = first.next;
+    
+      n--;
+      
+      return firstVal;
     }
   }
 
@@ -38,6 +39,7 @@ public class SLList<E> implements Queue<E> {
     if(index + 1 >= size()) {
       return false;
     } else {
+      //advance to index in list
       Node<E> curr = first;
       Node<E> prev = null;
       Node<E> next = first.next;
@@ -49,6 +51,7 @@ public class SLList<E> implements Queue<E> {
         index--;
       }
 
+      //if index is first or second to last, adjust first and last vars
       if(curr.equals(first)) {
         first = curr.next;
       } else if (curr.next.equals(last)) {
@@ -59,6 +62,7 @@ public class SLList<E> implements Queue<E> {
       curr.next = next.next;
       next.next = curr;
     }
+    
     return true;
   }
 
@@ -73,6 +77,7 @@ public class SLList<E> implements Queue<E> {
       values += (String.valueOf(curr.value) + " ");
       curr = curr.next;
     }
+
     return values;
   }
 
